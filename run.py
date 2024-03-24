@@ -1,22 +1,18 @@
+from helpers import draw_board
+import os
 
-"""
-Pritning the Board
-"""
-
-theBoard = {'1': ' ' , '2': ' ' , '3': ' ' ,
-            '4': ' ' , '5': ' ' , '6': ' ' ,
-            '7': ' ' , '8': ' ' , '9': ' ' }
-
-def get_Board(board):
-    print(board['1'] + '|' + board['2'] + '|' + board['3'])
-    print ('-+-+-')
-    print (board['4'] + '|' + board['5'] + '|' + board['6'])
-    print ('-+-+-')
-    print (board['7'] + '|' + board['8'] + '|' + board['9'])
+spots = {1 : '1', 2 : '2', 3 : '3', 4 : '4', 5 : '5', 6 : '6', 7 : '7', 8 : '8', 9 : '9'}
 
 
+draw_board(spots)
 
+playing = True 
 
-def main():
-    get_Board
-
+while playing:
+    # resets and clears the screen everytime 
+    os.system('cls' if os.name=='nt' else 'clear')
+    draw_board(spots)
+    # Player input
+    choice = input()
+    if choice == "q":
+        playing = False
