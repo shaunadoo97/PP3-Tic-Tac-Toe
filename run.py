@@ -59,8 +59,49 @@ def checkRow(board):
 
 def checkDiag(board):
         global winner 
-        if 
+        if board[0] == board[4] == board[8] and board[0] != "-":
+                winner = board[0]
+                return True
+        elif board[2] == board[4] == board[6] and board[2] != "-":
+                winner = board[2]
+                return True
+
+
+"""
+Checking for Tie
+"""
+def checkTie(board):
+        global gameRunning
+        if "-" not in board:
+                printBoard(board) 
+                print("It's a tie!")
+                gameRunning = False
+
+"""
+Checking for Win
+"""
+def checkWin(board):
+        global gameRunning
+        if checkDiag(board) or checkHorizontal(board) or checkRow(board):
+                print(f"The Winner is {winner}!")
+                gameRunning = False
+
+
+"""
+Switching Player
+"""
+
+def switchPlayer():
+        global currentPlayer
+        if currentPlayer == "X":
+            currentPlayer = "O"
+        else:
+           currentPlayer == "X"
+
 
 while gameRunning:
         printBoard(board)
         playerInput(board)
+        checkWin(board)
+        checkTie(board)
+        switchPlayer()
