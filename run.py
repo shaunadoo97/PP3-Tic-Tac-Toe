@@ -97,7 +97,7 @@ def switchPlayer():
         if currentPlayer == "X":
             currentPlayer = "O"
         else:
-           currentPlayer == "X"
+           currentPlayer = "X"
 
 """
 Computer's Turn
@@ -117,5 +117,5 @@ while gameRunning:
         checkTie(board)
         switchPlayer()
         computer(board)
-        checkWin()
+        checkWin(board)
         checkTie(board)
