@@ -85,7 +85,10 @@ def checkWin(board):
         global gameRunning
         if checkDiag(board) or checkHorizontal(board) or checkRow(board):
                 print(f"The Winner is {winner}!")
-                gameRunning = False
+                return True
+        else: 
+                return False
+
 
 
 """
@@ -113,7 +116,8 @@ def computer(board):
 while gameRunning:
         printBoard(board)
         playerInput(board)
-        checkWin(board)
+        if checkWin(board):
+            break
         checkTie(board)
         switchPlayer()
         computer(board)
