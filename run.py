@@ -1,6 +1,8 @@
 
 import os
 import random
+import colorama
+from colorama import Fore
 
 board = ["-", "-", "-", 
         "-", "-", "-",
@@ -11,6 +13,9 @@ winner = None
 gameRunning = True
 
 def resetScreen():
+        """
+        To keep the screen nice and clean.
+        """
         os.system("cls" if os.name == "nt" else "clear")
 
 # Drawing out the board
@@ -25,6 +30,7 @@ printBoard(board)
 
 
 def player_input(board):
+        
         """Takes the player input and checking if it is Valid.
         Run through different possibilities for invalid input.
         Place choice on board if valid
@@ -33,7 +39,7 @@ def player_input(board):
             inp = input("Please enter a number between 1 and 9:")
 
             # Checking that the input is a number
-            if not ip.isnumeric():
+            if not inp.isnumeric():
                 print(Fore.RED + "please enter numbers only!")
 
             # If it is a number, check the number is a valid choice for the board.
@@ -48,59 +54,61 @@ def player_input(board):
             else:
                 board[int(inp) - 1] = currentPlayer
                 break
-            
+            2
 
-"""
-Checking for win or tie
-"""
 def checkHorizontal(board):
-        global winner
+        """
+        Checking for win or tie
+        """
+        global WINNER
         if board[0] == board[1] == board[2] and board[1] != "-":
-                winner = board[0]
+                WINNER = board[0]
                 return True
         elif board[3] == board[4] == board[5] and board[3] != "-":
-                winner = board[3]
+                WINNER= board[3]
                 return True 
         elif board[6] == board[7] == board[8] and board[6] != "-":
-                winner = board[6]
+                WINNER = board[6]
                 return True 
 
 def checkRow(board):
-        global winner
+        global WINNER
         if board[0] == board[3] == board[6] and board[0] != "-":
-                winner = board[0]
+                WINNER = board[0]
                 return True
         elif board[1] == board[4] == board[7] and board[1] != "-":
-                winner = board[1]
+                WINNER = board[1]
                 return True
         elif  board[2] == board[5] == board[8] and board[2] != "-":
-                winner = board[2]
+                WINNER = board[2]
                 return True
 
 def checkDiag(board):
-        global winner 
+        global WINNER
         if board[0] == board[4] == board[8] and board[0] != "-":
-                winner = board[0]
+                WINNER = board[0]
                 return True
         elif board[2] == board[4] == board[6] and board[2] != "-":
-                winner = board[2]
+                wWINNER = board[2]
                 return True
 
 
-"""
-Checking for Tie
-"""
+
 def checkTie(board):
+        """
+        Checking for Tie
+        """
         global gameRunning
         if "-" not in board:
                 printBoard(board) 
                 print("It's a tie!")
                 gameRunning = False
 
-"""
-Checking for Win
-"""
+
 def checkWin(board):
+        """
+        Checking for Win
+        """
         global gameRunning
         if checkDiag(board) or checkHorizontal(board) or checkRow(board):
                 print(f"The Winner is {winner}!")
@@ -108,23 +116,21 @@ def checkWin(board):
         else: 
                 return False
 
-
-
-"""
-Switching Player
-"""
-
 def switchPlayer():
+        """
+        Switching Player
+        """
         global currentPlayer
         if currentPlayer == "X":
             currentPlayer = "O"
         else:
            currentPlayer = "X"
 
-"""
-Computer's Turn
-"""
+
 def computer(board):
+        """
+        Computer's Turn
+        """
         while currentPlayer == "O":
             position = random.randint(0, 8)
             if board[position] == "-":
