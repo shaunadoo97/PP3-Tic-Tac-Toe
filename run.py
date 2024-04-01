@@ -23,13 +23,32 @@ def printBoard(board):
      print(board[6] + " | " + board[7] + " | " + board[8])
 printBoard(board)
 
-# Using Int to ensure the number is an integer
-def playerInput(board):
-        inp = int(input("Please enter a number between 1 and 9:"))
-        if inp >= 1 and inp <= 9 and board[inp-1] == "-":
-                board[inp-1] = currentPlayer
-        else: 
-           print("Sorry, this player has already chosen this spot!")
+
+def player_input(board):
+        """Takes the player input and checking if it is Valid.
+        Run through different possibilities for invalid input.
+        Place choice on board if valid
+        """
+        while True:
+            inp = input("Please enter a number between 1 and 9:")
+
+            # Checking that the input is a number
+            if not ip.isnumeric():
+                print(Fore.RED + "please enter numbers only!")
+
+            # If it is a number, check the number is a valid choice for the board.
+            elif int(inp) not in range(1,10):
+                print(Fore.RED + "Please enter a number 1-9!")
+
+            # If it is valid, check that the space is free to choose on the board. 
+            elif board[int(inp) - 1] != "-":
+                print(Fore.RED + "Sorry, a player has already chosen this spot!")
+
+            # If all is well with the world, place it and break the loop.
+            else:
+                board[int(inp) - 1] = currentPlayer
+                break
+            
 
 """
 Checking for win or tie
@@ -115,7 +134,7 @@ def computer(board):
 
 while gameRunning:
         printBoard(board)
-        playerInput(board)
+        player_input(board)
         if checkWin(board):
             break
         checkTie(board)
