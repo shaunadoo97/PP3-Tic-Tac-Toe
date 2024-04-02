@@ -1,7 +1,6 @@
 
 import os
 import random
-import colorama
 from colorama import Fore
 
 board = ["-", "-", "-", 
@@ -54,7 +53,7 @@ def player_input(board):
             else:
                 board[int(inp) - 1] = currentPlayer
                 break
-            2
+            
 
 def checkHorizontal(board):
         """
