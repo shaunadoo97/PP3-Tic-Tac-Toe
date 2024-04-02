@@ -6,19 +6,23 @@ board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
 
+def welcome():
+        #User intro 
+        print("Welcome to Tic Tac Toe!")
+
+print(welcome)
+
 currentPlayer = "X"
 winner = None
 gameRunning = True
 
-def resetScreen():
+def resetScreen(board):
         """
         To keep the screen nice and clean.
         """
         os.system("cls" if os.name == "nt" else "clear")
 
-def welcome():
-        #User intro 
-        print("Welcome to Tic Tac Toe!")
+
 
 # Drawing out the board
 
