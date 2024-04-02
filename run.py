@@ -2,7 +2,6 @@
 import os
 import random
 from colorama import Fore
-
 board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
@@ -16,6 +15,10 @@ def resetScreen():
         To keep the screen nice and clean.
         """
         os.system("cls" if os.name == "nt" else "clear")
+
+def welcome():
+        #User intro 
+        print("Welcome to Tic Tac Toe!")
 
 # Drawing out the board
 
@@ -88,7 +91,7 @@ def checkDiag(board):
                 WINNER = board[0]
                 return True
         elif board[2] == board[4] == board[6] and board[2] != "-":
-                wWINNER = board[2]
+                WINNER = board[2]
                 return True
 
 
