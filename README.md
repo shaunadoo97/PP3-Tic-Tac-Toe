@@ -44,6 +44,10 @@ See screenshots of the repeated grid:
 
 <img src="assets/images/second_repeat.png" width="450" height="250">
 
+Also applying to the red colorama was working but once the message was an error, the whole Tic-Tac-Toe stays red constantly. I would have to break this loop.
+
+<img src="assets/images/red_message.png" width="250" height="190">
+
 ## Deployment 
 ### GitHub:
 How I deployed my project:
