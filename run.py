@@ -3,12 +3,12 @@ import os
 import random
 from colorama import Fore
 
-board = ["-", "-", "-", 
-        "-", "-", "-",
-        "-", "-", "-"]
+board = ["-", "-", "-",
+         "-", "-", "-",
+         "-", "-", "-"]
 
 currentPlayer = "X"
-winner = None 
+winner = None
 gameRunning = True
 
 def resetScreen():
