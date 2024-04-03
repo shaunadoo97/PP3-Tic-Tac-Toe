@@ -102,6 +102,7 @@ def checkTie(board):
                 printBoard(board) 
                 print("It's a tie!")
                 gameRunning = False
+       
 
 
 def checkWin(board):
@@ -143,14 +144,17 @@ def after_menu():
         action = input("Play Again?")
         while action != '1' or action != '2' or action != '3':
            if action == '1':
-                gameRunning('')
+                gameRunning(board)
            elif action == '2':
             main_menu()
            elif action == '3':
             quit()
            else:
               action = input('Play again?')
+
+
         
+      
 
 
 while gameRunning:
