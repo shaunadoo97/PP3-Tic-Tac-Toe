@@ -2,15 +2,14 @@
 import os
 import random
 from colorama import Fore
+
+
 board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
 
-def welcome():
-        #User intro 
-        print("Welcome to Tic Tac Toe!")
 
-print(welcome)
+
 
 currentPlayer = "X"
 winner = None
@@ -143,6 +142,22 @@ def computer(board):
                 board[position] = "O"
                 switchPlayer()
 
+def after_menu():
+        print("1. Want to play again?")
+        print("2. Menu")
+        print("3. Quit")
+        action = input("Play Again?")
+        while action != '1' or action != '2' or action != '3':
+           if action == '1':
+                gameRunning('')
+           elif action == '2':
+            main_menu()
+           elif action == '3':
+            quit()
+           else:
+              action = input('Play again?')
+        
+
 
 while gameRunning:
         printBoard(board)
@@ -154,3 +169,6 @@ while gameRunning:
         computer(board)
         checkWin(board)
         checkTie(board)
+        
+
+after_menu()
