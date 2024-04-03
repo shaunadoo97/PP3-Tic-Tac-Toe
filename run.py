@@ -115,6 +115,7 @@ def checkWin(board):
                 return True
         else: 
                 return False
+           
 
 def switchPlayer():
         """
@@ -144,15 +145,11 @@ def after_menu():
         action = input("Play Again?")
         while action != '1' or action != '2' or action != '3':
            if action == '1':
-                gameRunning(board)
-           elif action == '2':
-            main_menu()
+                gameRunning()    
            elif action == '3':
             quit()
            else:
               action = input('Play again?')
-
-
         
       
 
@@ -167,6 +164,7 @@ while gameRunning:
         computer(board)
         checkWin(board)
         checkTie(board)
+        after_menu()
         
 
-after_menu()
+
