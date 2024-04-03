@@ -8,9 +8,6 @@ board = ["-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
 
-
-
-
 currentPlayer = "X"
 winner = None
 gameRunning = True
@@ -20,8 +17,6 @@ def resetScreen(board):
         To keep the screen nice and clean.
         """
         os.system("cls" if os.name == "nt" else "clear")
-
-
 
 # Drawing out the board
 
@@ -96,7 +91,6 @@ def checkDiag(board):
         elif board[2] == board[4] == board[6] and board[2] != "-":
                 WINNER = board[2]
                 return True
-
 
 
 def checkTie(board):

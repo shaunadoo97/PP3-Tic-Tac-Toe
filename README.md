@@ -25,6 +25,7 @@ In this project, the Tic-tac-toe is a game where two players take turns drawing 
 
 ## My Colour Schemes 
 I installed Coloroma from https://pypi.org/project/colorama as I'd like to add some color to my project. I aim to add red to my messages when a playerm runs into an error where if you don't put in a valid answer, you'll see an error such as "please enter numbers only!"
+
 <img src="assets/images/error_message.png" width="400" height="70">
 
 ## My Features
