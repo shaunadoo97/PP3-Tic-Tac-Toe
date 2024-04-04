@@ -1,7 +1,5 @@
-
-import os
 import random
-from colorama import Fore
+from colorama import init, Fore
 
 
 board = ["-", "-", "-",
@@ -12,11 +10,6 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-def resetScreen(board):
-        """
-        To keep the screen nice and clean.
-        """
-        os.system("cls" if os.name == "nt" else "clear")
 
 # Drawing out the board
 
@@ -36,7 +29,7 @@ def player_input(board):
         Place choice on board if valid
         """
         while True:
-            inp = input("Please enter a number between 1 and 9:")
+            inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:" )
 
             # Checking that the input is a number
             if not inp.isnumeric():
@@ -115,7 +108,15 @@ def checkWin(board):
                 return True
         else: 
                 return False
-           
+                resetGame()
+
+def resetGame():
+        global board, currentPlayer, WINNER, gameRunning
+        board = ["-", "-", "-",
+                 "-", "-", "-",
+                 "-", "-", "-"]
+        winner = None
+        gameRunning = True
 
 def switchPlayer():
         """
@@ -138,21 +139,6 @@ def computer(board):
                 board[position] = "O"
                 switchPlayer()
 
-def after_menu():
-        print("1. Want to play again?")
-        print("2. Menu")
-        print("3. Quit")
-        action = input("Play Again?")
-        while action != '1' or action != '2' or action != '3':
-           if action == '1':
-                gameRunning()    
-           elif action == '3':
-            quit()
-           else:
-              action = input('Play again?')
-        
-      
-
 
 while gameRunning:
         printBoard(board)
@@ -164,7 +150,7 @@ while gameRunning:
         computer(board)
         checkWin(board)
         checkTie(board)
-        after_menu()
+
         
 
 
