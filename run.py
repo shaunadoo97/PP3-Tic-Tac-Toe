@@ -29,7 +29,7 @@ def player_input(board):
         Place choice on board if valid
         """
         while True:
-            inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:" )
+            inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:")
 
             # Checking that the input is a number
             if not inp.isnumeric():
@@ -108,15 +108,7 @@ def checkWin(board):
                 return True
         else: 
                 return False
-                resetGame()
-
-def resetGame():
-        global board, currentPlayer, WINNER, gameRunning
-        board = ["-", "-", "-",
-                 "-", "-", "-",
-                 "-", "-", "-"]
-        winner = None
-        gameRunning = True
+                
 
 def switchPlayer():
         """
@@ -150,6 +142,9 @@ while gameRunning:
         computer(board)
         checkWin(board)
         checkTie(board)
+
+        
+
 
         
 
