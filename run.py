@@ -1,6 +1,7 @@
 import random
-from colorama import init, Fore
+from colorama import Fore, init
 
+init(autoreset=True)
 
 board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
@@ -8,7 +9,7 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-init(autoreset=True)
+
 
 # Drawing out the board
 
@@ -113,10 +114,7 @@ def checkWin(board):
         return True
     else:
         return False
-        restart()
     
-def restart():
-    user_input = input("would you like to play again?")
 
 def switchPlayer():
     """
