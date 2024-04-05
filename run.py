@@ -17,6 +17,8 @@ def printBoard(board):
     print(board[3] + " | " + board[4] + " | " + board[5])
     print("---------")
     print(board[6] + " | " + board[7] + " | " + board[8])
+
+
 printBoard(board)
 
 
@@ -45,7 +47,9 @@ def player_input(board):
             board[int(inp) - 1] = currentPlayer
             break
 
+
 def checkHorizontal(board):
+
     """
     Checking for win or tie
     """
@@ -60,7 +64,9 @@ def checkHorizontal(board):
         WINNER = board[6]
         return True
 
+
 def checkRow(board):
+
     global WINNER
     if board[0] == board[3] == board[6] and board[0] != "-":
         WINNER = board[0]
@@ -72,7 +78,9 @@ def checkRow(board):
         WINNER = board[2]
         return True
 
+
 def checkDiag(board):
+
     global WINNER
     if board[0] == board[4] == board[8] and board[0] != "-":
         WINNER = board[0]
@@ -103,6 +111,7 @@ def checkWin(board):
         return True
     else:
         return False
+
 
 def switchPlayer():
     """
