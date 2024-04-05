@@ -1,4 +1,5 @@
 import random
+from colorama import Fore
 
 
 board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -25,19 +26,19 @@ def player_input(board):
     Place choice on board if valid
     """
     while True:
-        inp = input("Please enter a number between 1 and 9:")
+        inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:")
 
     # Checking that the input is a number
         if not inp.isnumeric():
-            print("please enter numbers only!")
+            print(Fore.RED + "please enter numbers only!")
 
     # If it is a number, check the number is a valid choice for the board.
         elif int(inp) not in range(1, 10):
-            print("Please enter a number 1-9!")
+            print(Fore.RED + "Please enter a number 1-9!")
 
     # If it is valid, check that the space is free to choose on the board.
         elif board[int(inp) - 1] != "-":
-            print("Sorry, a player has already chosen this spot!")
+            print(Fore.RED + "Sorry, a player has already chosen this spot!")
 
     # If all is well with the world, place it and break the loop.
         else:
