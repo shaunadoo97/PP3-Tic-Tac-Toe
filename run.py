@@ -1,5 +1,5 @@
 import random
-from colorama import Fore
+from colorama import init, Fore
 
 
 board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
@@ -8,6 +8,7 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
+init(autoreset=True)
 
 # Drawing out the board
 
@@ -97,7 +98,7 @@ def checkTie(board):
     global gameRunning
     if "-" not in board:
         printBoard(board)
-        print("It's a tie!")
+        print( Fore.RED + "It's a tie!" + init)
         gameRunning = False
 
 
@@ -107,11 +108,15 @@ def checkWin(board):
     """
     global gameRunning
     if checkDiag(board) or checkHorizontal(board) or checkRow(board):
-        print(f"The Winner is {winner}!")
+        print(f"The Winner is {WINNER}!")
+        print(f"Thanks for playing!")
         return True
     else:
         return False
-
+        restart()
+    
+def restart():
+    user_input = input("would you like to play again?")
 
 def switchPlayer():
     """
