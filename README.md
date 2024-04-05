@@ -28,13 +28,21 @@ I installed Coloroma from https://pypi.org/project/colorama as I'd like to add s
 
 <img src="assets/images/error_message.png" width="400" height="70">
 
+## FlowChart
+This is my simple Tic-Tac-Toe flowchart 
+
 ## My Features
 ### Inputs 
 I've included an input where the player must only put in a number from 1 to 9. 
 My mentor suggested that I should try to include a while True and break to control the flow. That goes for all while loops.
 The key for the if/else is that I must be careful about the order I check for the input. Reminding myself that first we check that the string input is a number before trying to use the input as an integer.
 
-<img src="assets/images/input.png" width="450" height="400">
+<img src="assets/images/input.png" width="420" height="400">
+
+I've included a While Loop for at the end of my Python Project so that the game run will play in a same Loop. 
+
+<img src="assets/images/while_loop.png" width="270" height="250">
+
 
 ## Bugs and Issues
 Throughout my project, I have encountered a numerous of issues.
@@ -48,6 +56,27 @@ See screenshots of the repeated grid:
 Also applying to the red colorama was working but once the message was an error, the whole Tic-Tac-Toe stays red constantly. I would have to break this loop.
 
 <img src="assets/images/red_message.png" width="250" height="190">
+
+
+## Testing and Code Validation
+In my testing, I validated my code by adding in the input that the answer must be an number. I tested by adding in a letter, a number greater than 9, and a special character.
+
+I added in w to check.
+
+<img src="assets/images/letter_input.png" width="350" height="50">
+
+I've added a number greater than nine
+
+<img src="assets/images/greater_than_nine.png" width="350" height="50">
+
+Added in a special character which was ???
+
+<img src="assets/images/special_characters.png" width="350" height="50">
+
+I've also validated my code ny trying to take the computer's chosen spot, I get a message to say please choose spot as this is already picked 
+
+<img src="assets/images/spot_already_taken.png" width = "350" height ="50">
+
 
 ## Deployment 
 ### GitHub:
@@ -85,7 +114,7 @@ In the add buildpack I made sure Python and Node.Js was included to check the fu
 ## Credits and Codes
 Throughout the project I used these as a reference and guidance to help me understand python.
 Links:
-https://www.youtube.com/watch?v=dK6gJw4-NCo
+Code Coach https://www.youtube.com/watch?v=dK6gJw4-NCo
 
 https://www.youtube.com/watch?v=Q6CCdCBVypg&t=484s
 

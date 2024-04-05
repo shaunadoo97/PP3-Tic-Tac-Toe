@@ -9,7 +9,7 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-
+# Code crediting to Code Coach 
 
 # Drawing out the board
 
@@ -30,7 +30,7 @@ def player_input(board):
     Place choice on board if valid
     """
     while True:
-        inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:")
+        inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:" + Fore.RESET)
 
     # Checking that the input is a number
         if not inp.isnumeric():
