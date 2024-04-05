@@ -1,5 +1,5 @@
 import random
-from colorama import init, Fore
+from colorama import Fore
 
 
 board = ["-", "-", "-",
