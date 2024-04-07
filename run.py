@@ -99,7 +99,7 @@ def checkTie(board):
     global gameRunning
     if "-" not in board:
         printBoard(board)
-        print( Fore.RED + "It's a tie!" + init)
+        print( Fore.RED + "It's a tie!")
         gameRunning = False
         
    

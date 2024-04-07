@@ -81,6 +81,9 @@ I've also validated my code ny trying to take the computer's chosen spot, I get 
 
 <img src="assets/images/spot_already_taken.png" width = "350" height ="50">
 
+I was able to get the Win result when i win the game.
+
+<img src="assets/images/results.png" width = "550" height ="190">
 
 ## Deployment 
 ### GitHub:
