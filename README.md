@@ -85,6 +85,22 @@ I was able to get the Win result when i win the game.
 
 <img src="assets/images/results.png" width = "550" height ="190">
 
+For when the computer wins.
+
+<img src="assets/images/computer_wins.png" width = "550" height ="190">
+
+When it's a tie. 
+
+<img src="assets/images/tie.png" width = "550" height ="190">
+
+### Validator
+
+I've also used https://pep8ci.herokuapp.com/ to validate my project
+I've two errors so far, I will need to fix them.
+
+<img src="assets/images/validate.png" width = "1000" height ="500">
+
+
 ## Deployment 
 ### GitHub:
 How I deployed my project:

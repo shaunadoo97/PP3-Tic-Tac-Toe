@@ -13,6 +13,7 @@ gameRunning = True
 
 # Drawing out the board
 
+
 def printBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("---------")
@@ -89,7 +90,7 @@ def checkDiag(board):
         return True
     elif board[2] == board[4] == board[6] and board[2] != "-":
         WINNER = board[2]
-        return True 
+        return True
 
 
 def checkTie(board):
@@ -99,10 +100,9 @@ def checkTie(board):
     global gameRunning
     if "-" not in board:
         printBoard(board)
-        print( Fore.RED + "It's a tie!")
+        print(Fore.RED + "It's a tie!")
         gameRunning = False
-        
-   
+
 
 def checkWin(board):
     """
@@ -115,7 +115,6 @@ def checkWin(board):
         return True
     else:
         return False
-        
 
 
 def switchPlayer():
