@@ -43,6 +43,10 @@ I've included a While Loop for at the end of my Python Project so that the game 
 
 <img src="assets/images/while_loop.png" width="270" height="250">
 
+I've included an Else/if statement 
+
+<img src="assets/images/elseif.png" width="350" height="250">
+
 
 ## Bugs and Issues
 Throughout my project, I have encountered a numerous of issues.
@@ -116,11 +120,9 @@ Throughout the project I used these as a reference and guidance to help me under
 Links:
 Code Coach https://www.youtube.com/watch?v=dK6gJw4-NCo
 
-https://www.youtube.com/watch?v=Q6CCdCBVypg&t=484s
-
 I've also researched using https://www.w3schools.com/python/default.asp
 
 I've also found Love Sandwiches to be very helpful with my understanding of Python and the principles behind it.
-Thank you to my mentor, Rory who has been super helpful throughout my project.
+Thank you to my mentor, Rory Patrick who has been super helpful throughout my project.
 
 

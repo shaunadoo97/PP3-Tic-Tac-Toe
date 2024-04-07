@@ -9,7 +9,7 @@ currentPlayer = "X"
 winner = None
 gameRunning = True
 
-# Code crediting to Code Coach 
+# Code crediting to Code Coach, altered to my own liking.
 
 # Drawing out the board
 
@@ -89,7 +89,7 @@ def checkDiag(board):
         return True
     elif board[2] == board[4] == board[6] and board[2] != "-":
         WINNER = board[2]
-        return True
+        return True 
 
 
 def checkTie(board):
@@ -101,7 +101,8 @@ def checkTie(board):
         printBoard(board)
         print( Fore.RED + "It's a tie!" + init)
         gameRunning = False
-
+        
+   
 
 def checkWin(board):
     """
@@ -114,7 +115,8 @@ def checkWin(board):
         return True
     else:
         return False
-    
+        
+
 
 def switchPlayer():
     """
