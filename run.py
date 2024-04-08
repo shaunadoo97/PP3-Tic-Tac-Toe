@@ -7,7 +7,7 @@ board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 currentPlayer = "X"
 winner = None
-gameRunning = True
+GAMERUNNING = True
 
 # Code crediting to Code Coach, altered to my own liking.
 
@@ -97,18 +97,18 @@ def checkTie(board):
     """
     Checking for Tie
     """
-    global gameRunning
+    global GAMERUNNING
     if "-" not in board:
         printBoard(board)
         print(Fore.RED + "It's a tie!")
-        gameRunning = False
+        GAMERUNNING = False
 
 
 def checkWin(board):
     """
     Checking for Win
     """
-    global gameRunning
+    global GAMERUNNING
     if checkDiag(board) or checkHorizontal(board) or checkRow(board):
         print(f"The Winner is {WINNER}!")
         print(f"Thanks for playing!")
@@ -139,12 +139,13 @@ def computer(board):
             switchPlayer()
 
 
-while gameRunning:
+while GAMERUNNING:
         printBoard(board)
         player_input(board)
         if checkWin(board):
             break
-        checkTie(board)
+        if checkTie(board):
+            break
         switchPlayer()
         computer(board)
         checkWin(board)
