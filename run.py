@@ -11,9 +11,12 @@ WINNER = None
 GAMERUNNING = True
 
 
-# Drawing out the board
+# Credits to Code Coach as mentioned in README. 
+# This project is also altered to my liking afterwards.
 
 def printBoard(board):
+    """Drawing out the board for the game
+    """
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("---------")
     print(board[3] + " | " + board[4] + " | " + board[5])
@@ -97,19 +100,30 @@ def checkTie(board):
     global GAMERUNNING
     if "-" not in board:
         printBoard(board)
-        print("It's a tie!")
+        print(Fore.RED + "It's a tie!")
         GAMERUNNING = False
 
 
 def checkWin(board):
     """
-    Checking for Win
+    Checking for Win from either player or computer
     """
     global GAMERUNNING
-    if checkDiag(board) or checkHorizontal(board) or checkRow(board):
-        print(f"The Winner is {WINNER}!")
-        print(f"Thanks for playing.")
+    if checkHorizontal(board):
+        printBoard(board)
+        print(f"The winner is {WINNER}!")
         GAMERUNNING = False
+
+    elif checkRow(board):
+        printBoard(board)
+        print(f"The winner is {WINNER}!")
+        GAMERUNNING = False
+
+    elif checkDiag(board):
+        printBoard(board)
+        print(f"The winner is {WINNER}!")
+        GAMERUNNING = False
+       
 
 def switchPlayer():
     """
@@ -132,6 +146,7 @@ def computer(board):
             board[position] = "O"
             switchPlayer()
 
+#Usind if/break to stop the while loop when a player wins.
 
 while GAMERUNNING:
         printBoard(board)
