@@ -11,7 +11,7 @@ WINNER = None
 GAMERUNNING = True
 
 
-# Credits to Code Coach as mentioned in README. 
+# Credits to Code Coach as mentioned in README.
 # This project is also altered to my liking afterwards.
 
 def printBoard(board):
@@ -24,12 +24,12 @@ def printBoard(board):
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 
-
 def player_input(board):
     """Takes the player input and checking if it is Valid.
     Run through different possibilities for invalid input.
     Place choice on board if valid
     """
+
     while True:
         inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:" + Fore.RESET)
 
@@ -52,7 +52,6 @@ def player_input(board):
 
 
 def checkHorizontal(board):
-
     """
     Checking for win or tie
     """
@@ -103,6 +102,8 @@ def checkTie(board):
         print(Fore.RED + "It's a tie!")
         GAMERUNNING = False
 
+# Again Credits to Code Coach still.
+
 
 def checkWin(board):
     """
@@ -123,7 +124,7 @@ def checkWin(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
         GAMERUNNING = False
-       
+
 
 def switchPlayer():
     """
@@ -146,7 +147,8 @@ def computer(board):
             board[position] = "O"
             switchPlayer()
 
-#Usind if/break to stop the while loop when a player wins.
+# Using if/break to stop the while loop when a player wins.
+
 
 while GAMERUNNING:
         printBoard(board)

@@ -99,8 +99,9 @@ When it's a tie.
 I've also used https://pep8ci.herokuapp.com/ to validate my project
 I've two errors so far, I will need to fix them.
 
-<img src="assets/images/validate.png" width = "1000" height ="370">
+<img src="assets/images/new_linter.png" width = "1200" height ="300">
 
+I've had a hard time trying to sort line 154.
 
 ## Deployment 
 ### GitHub:
