@@ -113,16 +113,19 @@ def checkWin(board):
     if checkHorizontal(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
+        print(f"Thanks for playing!")
         GAMERUNNING = False
 
     elif checkRow(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
+        print(f"Thanks for playing!")
         GAMERUNNING = False
 
     elif checkDiag(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
+        print(f"Thanks for playing!")
         GAMERUNNING = False
 
 
