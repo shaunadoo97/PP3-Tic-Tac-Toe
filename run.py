@@ -3,16 +3,15 @@ from colorama import Fore, init
 
 init(autoreset=True)
 
+
 board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
-currentPlayer = "X"
-winner = None
+CURPLAYER = "X"
+WINNER = None
 GAMERUNNING = True
 
-# Code crediting to Code Coach, altered to my own liking.
 
 # Drawing out the board
-
 
 def printBoard(board):
     print(board[0] + " | " + board[1] + " | " + board[2])
@@ -21,8 +20,6 @@ def printBoard(board):
     print("---------")
     print(board[6] + " | " + board[7] + " | " + board[8])
 
-
-printBoard(board)
 
 
 def player_input(board):
@@ -47,7 +44,7 @@ def player_input(board):
 
     # If all is well with the world, place it and break the loop.
         else:
-            board[int(inp) - 1] = currentPlayer
+            board[int(inp) - 1] = CURPLAYER
             break
 
 
@@ -97,10 +94,10 @@ def checkTie(board):
     """
     Checking for Tie
     """
-    global GAMERUNNING
+    global gameRunning
     if "-" not in board:
         printBoard(board)
-        print(Fore.RED + "It's a tie!")
+        print("It's a tie!")
         GAMERUNNING = False
 
 
@@ -111,7 +108,7 @@ def checkWin(board):
     global GAMERUNNING
     if checkDiag(board) or checkHorizontal(board) or checkRow(board):
         print(f"The Winner is {WINNER}!")
-        print(f"Thanks for playing!")
+        print(f"Thanks for playing.")
         return True
     else:
         return False
@@ -121,18 +118,18 @@ def switchPlayer():
     """
     Switching Player
     """
-    global currentPlayer
-    if currentPlayer == "X":
-        currentPlayer = "O"
+    global CURPLAYER
+    if CURPLAYER == "X":
+        CURPLAYER = "O"
     else:
-        currentPlayer = "X"
+        CURPLAYER = "X"
 
 
 def computer(board):
     """
     Computer's Turn
     """
-    while currentPlayer == "O":
+    while CURPLAYER == "O":
         position = random.randint(0, 8)
         if board[position] == "-":
             board[position] = "O"
@@ -144,8 +141,7 @@ while GAMERUNNING:
         player_input(board)
         if checkWin(board):
             break
-        if checkTie(board):
-            break
+        checkTie(board)
         switchPlayer()
         computer(board)
         checkWin(board)
