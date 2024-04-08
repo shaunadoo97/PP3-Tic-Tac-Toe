@@ -1,5 +1,7 @@
+<img src="assets/images/responsive.png" width="700" height="350">
+
 # Introduction 
-## My Project
+## My Tic-Tac-Toe Project
 Hello, welcome to my game called Tic-Tac-Toe! 
 In this project, the Tic-tac-toe is a game where two players take turns drawing either an "X" or an "O" in a grid of nine squares. The goal is to get three of your marks in a row, either horizontally, vertically, or diagonally. It's like a race to see who can get three in a row first! If nobody gets three in a row and all the squares are filled up, it's a tie. It's a simple and fun game to play with the computer!
 
@@ -8,7 +10,7 @@ In this project, the Tic-tac-toe is a game where two players take turns drawing 
 
 [My Colour Schemes](#my-colour-schemes "Go to my-colour-schemes")
 
-[My Features](#my-colour-schemes "Go to my-features")
+[My Features](#my-features "Go to my-features")
 
 [Deployment ](#deployment "Go to my-deployment")
 
@@ -28,8 +30,6 @@ I installed Coloroma from https://pypi.org/project/colorama as I'd like to add s
 
 <img src="assets/images/error_message.png" width="400" height="70">
 
-## FlowChart
-This is my simple Tic-Tac-Toe flowchart 
 
 ## My Features
 ### Inputs 
@@ -65,15 +65,15 @@ Also applying to the red colorama was working but once the message was an error,
 ## Testing and Code Validation
 In my testing, I validated my code by adding in the input that the answer must be an number. I tested by adding in a letter, a number greater than 9, and a special character.
 
-I added in w to check.
+I added in a letter w to check.
 
 <img src="assets/images/letter_input.png" width="350" height="50">
 
-I've added a number greater than nine
+I've added a number greater than nine to check.
 
 <img src="assets/images/greater_than_nine.png" width="350" height="50">
 
-Added in a special character which was ???
+Added in a special character which was ??? to check.
 
 <img src="assets/images/special_characters.png" width="350" height="50">
 
@@ -89,6 +89,7 @@ For when the computer wins.
 
 <img src="assets/images/computer_wins.png" width = "550" height ="190">
 
+To send a message if there is no winner in this round.
 When it's a tie. 
 
 <img src="assets/images/tie.png" width = "550" height ="190">
@@ -98,7 +99,7 @@ When it's a tie.
 I've also used https://pep8ci.herokuapp.com/ to validate my project
 I've two errors so far, I will need to fix them.
 
-<img src="assets/images/validate.png" width = "1000" height ="500">
+<img src="assets/images/validate.png" width = "1000" height ="370">
 
 
 ## Deployment 
