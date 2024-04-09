@@ -78,8 +78,8 @@ def checkDiag(board):
     if board[0] == board[4] == board[8] and board[0] != "-":
         WINNER = board[0]
         return True
-    elif board[2] == board[4] == board[6] and board[2] != "-":
-        WINNER = board[2]
+    elif board[6] == board[4] == board[2] and board[6] != "-":
+        WINNER = board[6]
         return True
 
 
@@ -99,7 +99,7 @@ def checkWin(board):
     """
     Checking for Win from either player or computer
     """
-    global GAMERUNNING, WINNER
+    global GAMERUNNING
     if checkHorizontal(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
@@ -149,5 +149,6 @@ while GAMERUNNING:
         checkTie(board)
         switchPlayer()
         computer(board)
-        checkWin(board)
+        if checkWin(board):
+            break
         checkTie(board)
