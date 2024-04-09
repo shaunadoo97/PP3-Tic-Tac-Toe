@@ -98,21 +98,27 @@ def checkTie(board):
         print("It's a tie!")
         GAMERUNNING = False
 
-
 def checkWin(board):
     """
     Checking for Win
+    Checking for Win from either player or computer
     """
     global GAMERUNNING
-    if checkDiag(board) or checkHorizontal(board) or checkRow(board):
-        print(f"The Winner is {WINNER}!")
-        print(f"Thanks for playing.")
-        return True
-    else:
-        return False
-
+    if checkHorizontal(board):
+        printBoard(board)
+        print(f"The winner is {WINNER}!")
         GAMERUNNING = False
 
+    elif checkRow(board):
+        printBoard(board)
+        print(f"The winner is {WINNER}!")
+        GAMERUNNING = False
+
+    elif checkDiag(board):
+        printBoard(board)
+        print(f"The winner is {WINNER}!")
+        GAMERUNNING = False
+        
 
 def switchPlayer():
     """
@@ -129,13 +135,13 @@ def computer(board):
     """
     Computer's Turn
     """
-
-    
     while CURPLAYER == "O":
         position = random.randint(0, 8)
         if board[position] == "-":
             board[position] = "O"
             switchPlayer()
+
+
 while GAMERUNNING:
         printBoard(board)
         player_input(board)
@@ -144,5 +150,4 @@ while GAMERUNNING:
         checkTie(board)
         switchPlayer()
         computer(board)
-        checkWin(board)
         checkTie(board)
