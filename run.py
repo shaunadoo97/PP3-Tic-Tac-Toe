@@ -3,7 +3,6 @@ from colorama import Fore, init
 
 init(autoreset=True)
 
-
 board = ["-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
 CURPLAYER = "X"
@@ -11,9 +10,11 @@ WINNER = None
 GAMERUNNING = True
 
 
-# Drawing out the board
-
+# Credits to Code Coach as mentioned in README.
+# This project is also altered to my liking afterwards.
 def printBoard(board):
+    """Drawing out the board for the game
+    """
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("---------")
     print(board[3] + " | " + board[4] + " | " + board[5])
@@ -21,7 +22,6 @@ def printBoard(board):
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 
-    
 def player_input(board):
     """Takes the player input and checking if it is Valid.
     Run through different possibilities for invalid input.
@@ -29,19 +29,15 @@ def player_input(board):
     """
     while True:
         inp = input(Fore.YELLOW + "Please enter a number between 1 and 9:" + Fore.RESET)
-
     # Checking that the input is a number
         if not inp.isnumeric():
             print(Fore.RED + "please enter numbers only!")
-
     # If it is a number, check the number is a valid choice for the board.
         elif int(inp) not in range(1, 10):
             print(Fore.RED + "Please enter a number 1-9!")
-
     # If it is valid, check that the space is free to choose on the board.
         elif board[int(inp) - 1] != "-":
             print(Fore.RED + "Sorry, a player has already chosen this spot!")
-            
     # If all is well with the world, place it and break the loop.
         else:
             board[int(inp) - 1] = CURPLAYER
@@ -65,7 +61,6 @@ def checkHorizontal(board):
 
 
 def checkRow(board):
-
     global WINNER
     if board[0] == board[3] == board[6] and board[0] != "-":
         WINNER = board[0]
@@ -95,30 +90,34 @@ def checkTie(board):
     global GAMERUNNING
     if "-" not in board:
         printBoard(board)
-        print("It's a tie!")
+        print(Fore.RED + "It's a tie!")
         GAMERUNNING = False
 
+
+# Again Credits to Code Coach still.
 def checkWin(board):
     """
-    Checking for Win
     Checking for Win from either player or computer
     """
-    global GAMERUNNING
+    global GAMERUNNING, WINNER
     if checkHorizontal(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
+        print(f"Thanks for playing!")
         GAMERUNNING = False
 
     elif checkRow(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
+        print(f"Thanks for playing!")
         GAMERUNNING = False
 
     elif checkDiag(board):
         printBoard(board)
         print(f"The winner is {WINNER}!")
+        print(f"Thanks for playing!")
         GAMERUNNING = False
-        
+
 
 def switchPlayer():
     """
@@ -141,7 +140,7 @@ def computer(board):
             board[position] = "O"
             switchPlayer()
 
-
+# Using if/break to stop the while loop when a player wins.
 while GAMERUNNING:
         printBoard(board)
         player_input(board)
@@ -150,4 +149,5 @@ while GAMERUNNING:
         checkTie(board)
         switchPlayer()
         computer(board)
+        checkWin(board)
         checkTie(board)
